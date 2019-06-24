@@ -1,0 +1,97 @@
+.register-page {
+  background-color: #FB404B;
+}
+
+.register-page::after {
+   background-image: url("../img/sidebar-4.jpg");
+    opacity: 0.71;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.register-page .link {
+  font-size: 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.card-register {
+  overflow: hidden;
+  text-align: center;
+  z-index: 2;
+}
+
+.card-register .card-header img {
+  position: absolute;
+  margin-left: -50px;
+  margin-top: -150px;
+  border-radius: 20%;
+  width: 350px;
+}
+
+.card-register .header {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 30px 0;
+}
+
+.card-register .text-divider {
+  margin-top: 30px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.card-register .content {
+  padding: 0px 30px;
+}
+
+.card-register .form-check {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.card-register .form-check label:not(.form-check-label) {
+  padding-left: 38px;
+}
+
+.card-register .card-header {
+  padding: 0 0 50px;
+  overflow: hidden;
+}
+
+.card-register .card-header .card-title {
+  position: relative;
+  font-size: 5em;
+  font-weight: 900;
+  color: #222a42;
+  text-transform: lowercase;
+  margin-left: -5px;
+  z-index: 1;
+}
+
+.card-register .card-img {
+  position: absolute;
+  left: 0;
+  top: -15%;
+  width: 70%;
+}
+
+.card-register .social-line {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.card-register .social-line .btn.btn-icon,
+.card-register .social-line .btn.btn-icon .btn-icon {
+  margin-left: 5px;
+  margin-right: 5px;
+  box-shadow: 0px 5px 50px 0px rgba(0, 0, 0, 0.2);
+}
+
+.card-register .card-footer {
+  margin-bottom: 10px;
+}
