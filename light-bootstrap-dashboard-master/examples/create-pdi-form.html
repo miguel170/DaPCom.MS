@@ -23,13 +23,17 @@
 </head>
 
 <body>
-    <!-- Sidebar -->
     
+    <div class="wrapper">
+    <!-- Sidebar -->
+    <iframe src="sidebar.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()">
+    </iframe>
     <!-- End Sidebar -->
     
         <div class="main-panel">
             <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+             <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+                
                 <div class="container container-fluid">
                     <a class="navbar-brand" href="#pablo"> Personal Data Inventory - Create </a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,45 +41,12 @@
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
                     </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                        <ul class="nav navbar-nav mr-auto">
-                            <!--<li class="nav-item">
-                                <a href="#" class="nav-link" data-toggle="dropdown">
-                                    <i class="nc-icon nc-palette"></i>
-                                    <span class="d-lg-none">Dashboard</span>
-                                </a>
-                            </li>-->
-                        </ul>
-                        <ul class="navbar-nav ml-auto">
-                            <li class="dropdown nav-item">
-                                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" rel = 'tooltip' title = 'Notifications'>
-                                    <i class="nc-icon nc-bell-55"></i>
-                                    <span class="notification">5</span>
-                                    <span class="d-lg-none">Notification</span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Notification 1</a>
-                                    <a class="dropdown-item" href="#">Notification 2</a>
-                                    <a class="dropdown-item" href="#">Notification 3</a>
-                                    <a class="dropdown-item" href="#">Notification 4</a>
-                                    <a class="dropdown-item" href="#">Another notification</a>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="no-icon font-weight-bold">Welcome, OCCS!</span>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">View Audit Trail</a>
-                                    <a class="dropdown-item" href="login.html">Logout</a>
-                                    <div class="divider"></div>
-                                    <a class="dropdown-item" href="#">Separated link</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <iframe src="navbar.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"> 
+            </iframe>
+                            </div>
+                
             </nav>
+
             <!-- End Navbar -->
 
             <div class="content">
@@ -91,10 +62,10 @@
                             <div class = 'card-body'>
                                 <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'>Name</label>                                    
-                                    <input class='form-control'></input>
+                                    <input class='form-control prerequisite'></input>
             
                                     <label class = 'card-title form-check-label'>Type of Event/Activity</label>
-                                    <select class = 'form-control'>
+                                    <select class = 'form-control prerequisite'>
                                         <option value = '1'>Program</option>
                                         <option value = '2'>Project</option>
                                         <option value = '3'>Process</option>
@@ -133,12 +104,13 @@
 
                 </div>
 
+            <!-- Data Element -->
                     <div class = 'row col-md-12 col-sm-auto mx-auto reveal'>
-                        <div class = 'card col-md-6 col-sm-12 mx-auto'>
+                        <div class = 'card col-md-6 col-sm-12 ml-4'>
                             <div class = 'card-header'>
                                 <h4 class= "card-title">Data Element(s)</h4>
                                     <p class = 'card-category'> Current list of personal data for collection in this activity </p>
-                                    <button type= 'button' class = 'btn btn-primary btn-fill'> New
+                                    <button type= 'button' class = 'btn btn-primary btn-fill' id = 'new'> New
                                         </button>
                             </div>
 
@@ -153,8 +125,8 @@
                                                     <th></th>
                                             </thead>
 
-                                            <tbody>
-                                                <tr>
+                                            <tbody id = 'invTable'>
+                                                <tr id = 'row'>
                                                     <th>Control Number</th>
                                                     <td>06-21-2019</td>
                                                     <td>06-21-2019</td>
@@ -163,7 +135,7 @@
 
                                                 </tr>
 
-                                                <tr>
+                                                <tr id ='row'>
                                                     <th>Name of Employee</th>
                                                     <td>12-25-2017</td>
                                                     <td>06-21-2017</td>
@@ -181,7 +153,7 @@
                                     </div>
                             </div>
 
-                         <div class = 'card col-md-5 mx-auto'>
+                         <div class = 'card col-md-5 mx-auto pdi-sheet'>
                             <div class = 'card-header'>
                                 <h4 class= "card-title">Data</h4>
                                     <p class = 'card-category'> Determine the data that shall
@@ -191,12 +163,12 @@
                             <div class = 'card-body'>
                                 <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'>Name</label>
-                                    <input class = 'form-control'></input>
+                                    <input class = 'form-control pdi-sheet'></input>
                                 </div>
 
                                 <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'>Data Classification</label>
-                                    <select class = 'form-control'>
+                                    <select class = 'form-control pdi-sheet'>
                                         <option value='1'>Personal</option>
                                         <option value='2'>Sensitive</option>
                                         <option value='3'>Privileged</option>
@@ -205,7 +177,7 @@
 
                                 <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'>Source</label>
-                                    <input class = 'form-control'></input>
+                                    <input class = 'form-control pdi-sheet'></input>
                                 </div>
                             </div>
 
@@ -219,13 +191,13 @@
 
                             <div class = 'card-body'>
                                 <div class = 'form-group'>
-                                    <label class = 'card-title form-check-label'>Purpose(s)</label>
+                                    <label class = 'card-title form-check-label pdi-sheet'>Purpose(s)</label>
                                     <textarea class ='form-control' wrap='soft'></textarea>   
                                 </div>
 
                                 <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'>Legal Basis</label>
-                                    <select class = 'form-control'>
+                                    <select class = 'form-control pdi-sheet'>
                                         <option value='1'>Consent</option>
                                         <option value='2'>Legitimate interest</option>
                                         <option value='3'>Procedural requirement</option>
@@ -235,13 +207,13 @@
                                 <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'>Location(s)</label>
                                     <div class = 'input-group'>
-                                        <input class = 'form-control'></input>
+                                        <input class = 'form-control pdi-sheet'></input>
                                     <button class = 'btn btn-info btn-fill'>
                                         <i class = 'nc-icon nc-simple-add font-weight-bold'></i>
                                     </button>
                                 </div>
-                            </div>  
-                    </div>
+                            </div>
+    </div>
 
                             <!-- Users -->
 
@@ -256,36 +228,37 @@
                                 
                                 <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'>Internal</label>
-                                    <div class = 'input-group'>
-                                        <input class = 'form-control'></input>
+                                    <div class = 'input-group pdi-sheet'>
+                                        <input class = 'form-control pdi-sheet'></input>
                                     <button class = 'btn btn-info btn-fill'>
                                         <i class = 'nc-icon nc-simple-add font-weight-bold'></i>
                                     </button>
                                 </div>
+        </div>
 
                                 <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'
                                     rel = 'tooltip' title = 'Service Providers'>Personal Information Processor(s)</label>
                                     <div class = 'input-group'>
-                                        <input class = 'form-control'></input>
+                                        <input class = 'form-control pdi-sheet'></input>
                                     <button class = 'btn btn-info btn-fill'>
                                         <i class = 'nc-icon nc-simple-add font-weight-bold'></i>
                                     </button>
                                 </div>
+        </div>
 
                                 <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'
                                     rel = 'tooltip' title = 'Government Institutions'>Personal Information Controller(s)</label>
                                     <div class = 'input-group'>
-                                        <input class = 'form-control'></input>
+                                        <input class = 'form-control pdi-sheet'></input>
                                     <button class = 'btn btn-info btn-fill'>
                                         <i class = 'nc-icon nc-simple-add font-weight-bold'></i>
                                     </button>
                                 </div>
-                            </div>  
-                    </div>
-                </div>
-            </div>
+                            </div>
+    </div>
+                
 
             <!-- Policies -->
 
@@ -300,70 +273,41 @@
                                 
                                 <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'>Use/Disclosure</label>
-                                    <textarea class ='form-control' wrap='soft'></textarea>
+                                    <textarea class ='form-control pdi-sheet' wrap='soft'></textarea>
                                 </div>
 
                                 <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'>Protection</label>
-                                    <textarea class ='form-control' wrap='soft'></textarea>
+                                    <textarea class ='form-control pdi-sheet' wrap='soft'></textarea>
                                 </div>
 
                                 <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'>Backup</label>
-                                    <textarea class ='form-control' wrap='soft'></textarea>
+                                    <textarea class ='form-control pdi-sheet' wrap='soft'></textarea>
                             </div>  
 
                             <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'>Disposal</label>
-                                    <textarea class ='form-control' wrap='soft'></textarea>
+                                    <textarea class ='form-control pdi-sheet' wrap='soft'></textarea>
                             </div>
 
                             <div class = 'card-footer text-center'>
-                                <button class = 'btn btn-success btn-fill'> Save </button>
-                                <button class = 'btn btn-danger btn-fill'> Cancel </button>
+                                <button class = 'btn btn-success btn-fill' id = 'save'> Save </button>
+                                <button class = 'btn btn-danger btn-fill' id = 'cancel'> Cancel </button>
                             </div>
-                              
-                    </div>
-                </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+    
+    <footer class = 'footer'>
+        <iframe src="footer.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"> 
+            </iframe>
+    </footer>
 
-            </div>
-        </div>
-    </div>
-
-            <footer class="footer">
-                <div class="container-fluid">
-                    <nav>
-                        <ul class="footer-menu">
-                            <li>
-                                <a href="https://www.dlsu.edu.ph/privacy/">
-                                    Read: DLSU Website Policy
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.privacy.gov.ph/implementing-rules-regulations-data-privacy-act-2012/">
-                                    Read: Data Privacy Act of 2012
-                                </a>
-                            </li>
-                            <li>
-                            	<a href="#">
-                                    FAQs
-                                </a>
-                            </li>
-                            
-                        </ul>
-
-                        <p class="copyright text-center">
-                            ©
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script>
-                            <a href="#">Data Privacy Compliance Management System</a>
-                        </p>
-                    </nav>
-                </div>
-            </footer>
-        </div>
-    </div>
+</div>
+</div>
 
 </body>
 
