@@ -78,7 +78,7 @@ td,
 button.close {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    font-family: "Montserrat", "Advent Pro", "Roboto", "Helvetica Neue", Arial, sans-serif;
+    font-family: "Advent Pro", "Roboto", "Helvetica Neue", Arial, sans-serif;
     font-weight: 400;
 }
 
@@ -389,7 +389,7 @@ body>.navbar-collapse .logo p {
     margin: 10px 10px;
     color: #FFFFFF;
     line-height: 20px;
-    font-family: "Montserrat", "Advent Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Advent Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .sidebar .logo .simple-text,
@@ -447,9 +447,9 @@ body>.navbar-collapse .nav li .nav-link:hover {
 .sidebar .nav li .nav-link p,
 body>.navbar-collapse .nav li .nav-link p {
     margin: 0;
-    line-height: 31px;
-    font-size: 14px;
-    font-weight: 600;
+    line-height: 3px;
+    font-size: 12.1px;
+    font-weight: 700;
     text-transform: uppercase;
     display: inline-flex;
 }
@@ -532,7 +532,7 @@ body>.navbar-collapse .logo p {
     margin: 10px 10px;
     color: #FFFFFF;
     line-height: 20px;
-    font-family: "Montserrat", "Advent Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Advent Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .sidebar .logo .simple-text,
