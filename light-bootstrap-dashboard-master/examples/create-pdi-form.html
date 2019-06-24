@@ -23,71 +23,10 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="sidebar" data-color = 'red' data-image="../assets/img/sidebar-4.jpg">
-            <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
-
-        Tip 2: you can also add an image using data-image tag
-    -->
-            <div class="sidebar-wrapper">
-                <div class="logo">
-                    <a href="http://www.creative-tim.com" class="simple-text">
-                        <img src = '../assets/img/DPCMS Logo.png' width="200px" height = '200px'>
-                    </a>
-                </div>
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="main-dpo.html">
-                            <i class="nc-icon nc-chart-pie-35"></i>
-                            <p>Risk Dashboard</p>
-                        </a>
-                    </li>
-                    <li class = 'nav-item active' rel ='tooltip' title = 'Personal Data Inventory'>
-                        <a class="nav-link active" href="./main-pdi.html">
-                            <i class="nc-icon nc-circle-09"></i>
-                            <p>PDI</p>
-                        </a>
-                    </li>
-                    <li class="nav-item active" rel ='tooltip' title = 'Privacy Impact Assessment'>
-                        <a class="nav-link" href="sample-pia-form.html">
-                            <i class="nc-icon nc-chart-pie-35"></i>
-                            <p>PIA</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="./table.html">
-                            <i class="nc-icon nc-notes"></i>
-                            <p>Consent Inventory</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="./typography.html">
-                            <i class="nc-icon nc-paper-2"></i>
-                            <p>Typography</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="./icons.html">
-                            <i class="nc-icon nc-atom"></i>
-                            <p>Icons</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="./notifications.html">
-                            <i class="nc-icon nc-bell-55"></i>
-                            <p>Notifications</p>
-                        </a>
-                    </li>
-                    <!-- <li class="nav-item active active-pro">
-                        <a class="nav-link active" href="upgrade.html">
-                            <i class="nc-icon nc-alien-33"></i>
-                            <p>Upgrade to PRO</p>
-                        </a>
-                    </li> -->
-                </ul>
-            </div>
-        </div>
+    <!-- Sidebar -->
+    
+    <!-- End Sidebar -->
+    
         <div class="main-panel">
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg " color-on-scroll="500">
@@ -151,10 +90,10 @@
                             
                             <div class = 'card-body'>
                                 <div class = 'form-group'>
-                                    <label class = 'card-title'>Name</label>                                    
+                                    <label class = 'card-title form-check-label'>Name</label>                                    
                                     <input class='form-control'></input>
             
-                                    <label class = 'card-title'>Type of Event/Activity</label>
+                                    <label class = 'card-title form-check-label'>Type of Event/Activity</label>
                                     <select class = 'form-control'>
                                         <option value = '1'>Program</option>
                                         <option value = '2'>Project</option>
@@ -167,12 +106,12 @@
                             </div>
 
                             <div class="card-footer text-center">
-                                <button class = 'btn btn-primary btn-simple btn-fill'> Proceed > </button>
+                                <button class = 'btn btn-primary btn-simple btn-fill' id = 'submit-act'> Proceed > </button>
                             </div>
 
                         </div>
 
-                        <div class = 'card col-md-3 mx-auto'>
+                        <div class = 'card col-md-3 mx-auto reveal'>
                             <div class = 'card-header'>
                                 <h4 class= "card-title">Data Subject(s)</h4>
                                     <p class = 'card-category'> Determine the people who owns the
@@ -181,7 +120,7 @@
 
                             <div class = 'card-body'>
                                 <div class = 'form-group'>
-                                    <label class = 'card-title'>Data Subject(s)</label>
+                                    <label class = 'card-title form-check-label'>Data Subject(s)</label>
                                         <div class = 'input-group input-rounded'>
                                             <input class = 'form-control'></input>
                                                 <button class = 'btn btn-secondary btn-fill'>
@@ -194,19 +133,19 @@
 
                 </div>
 
-                    <div class = 'row col-md-12 mx-auto'>
-                        <div class = 'card col-md-4 mx-auto'>
+                    <div class = 'row col-md-12 col-sm-auto mx-auto reveal'>
+                        <div class = 'card col-md-6 col-sm-12 mx-auto'>
                             <div class = 'card-header'>
                                 <h4 class= "card-title">Data Element(s)</h4>
-                                    <p class = 'card-category'> Current list of data elements for this activity </p>
+                                    <p class = 'card-category'> Current list of personal data for collection in this activity </p>
                                     <button type= 'button' class = 'btn btn-primary btn-fill'> New
                                         </button>
                             </div>
 
-                            <div class = 'card-body'>
+                            <div class = 'card-body col-md-auto col-sm-auto mx-auto'>
                                 <div class="table table-full-width">
-                                        <table class="table table-sm table-hover table-responsive">
-                                            <thead class = 'table-dark'>
+                                        <table class="table table table-hover table-responsive">
+                                            <thead class = 'table-info'>
                                                     <th>Name</th>
                                                     <th>Date Created</th>
                                                     <th>Date Updated</th>
@@ -242,7 +181,7 @@
                                     </div>
                             </div>
 
-                         <div class = 'card col-md-7 mx-auto'>
+                         <div class = 'card col-md-5 mx-auto'>
                             <div class = 'card-header'>
                                 <h4 class= "card-title">Data</h4>
                                     <p class = 'card-category'> Determine the data that shall
@@ -251,12 +190,12 @@
 
                             <div class = 'card-body'>
                                 <div class = 'form-group'>
-                                    <label class = 'card-title'>Data Element</label>
+                                    <label class = 'card-title form-check-label'>Name</label>
                                     <input class = 'form-control'></input>
                                 </div>
 
                                 <div class = 'form-group'>
-                                    <label class = 'card-title'>Data Classification</label>
+                                    <label class = 'card-title form-check-label'>Data Classification</label>
                                     <select class = 'form-control'>
                                         <option value='1'>Personal</option>
                                         <option value='2'>Sensitive</option>
@@ -265,7 +204,7 @@
                                 </div>
 
                                 <div class = 'form-group'>
-                                    <label class = 'card-title'>Source</label>
+                                    <label class = 'card-title form-check-label'>Source</label>
                                     <input class = 'form-control'></input>
                                 </div>
                             </div>
@@ -280,12 +219,12 @@
 
                             <div class = 'card-body'>
                                 <div class = 'form-group'>
-                                    <label class = 'card-title'>Purpose(s)</label>
+                                    <label class = 'card-title form-check-label'>Purpose(s)</label>
                                     <textarea class ='form-control' wrap='soft'></textarea>   
                                 </div>
 
                                 <div class = 'form-group'>
-                                    <label class = 'card-title'>Legal Basis</label>
+                                    <label class = 'card-title form-check-label'>Legal Basis</label>
                                     <select class = 'form-control'>
                                         <option value='1'>Consent</option>
                                         <option value='2'>Legitimate interest</option>
@@ -294,7 +233,7 @@
                                 </div>
 
                                 <div class = 'form-group'>
-                                    <label class = 'card-title'>Location(s)</label>
+                                    <label class = 'card-title form-check-label'>Location(s)</label>
                                     <div class = 'input-group'>
                                         <input class = 'form-control'></input>
                                     <button class = 'btn btn-info btn-fill'>
@@ -316,7 +255,7 @@
                             <div class = 'card-body'>
                                 
                                 <div class = 'form-group'>
-                                    <label class = 'card-title'>Internal</label>
+                                    <label class = 'card-title form-check-label'>Internal</label>
                                     <div class = 'input-group'>
                                         <input class = 'form-control'></input>
                                     <button class = 'btn btn-info btn-fill'>
@@ -325,7 +264,7 @@
                                 </div>
 
                                 <div class = 'form-group'>
-                                    <label class = 'card-title'
+                                    <label class = 'card-title form-check-label'
                                     rel = 'tooltip' title = 'Service Providers'>Personal Information Processor(s)</label>
                                     <div class = 'input-group'>
                                         <input class = 'form-control'></input>
@@ -335,7 +274,7 @@
                                 </div>
 
                                 <div class = 'form-group'>
-                                    <label class = 'card-title'
+                                    <label class = 'card-title form-check-label'
                                     rel = 'tooltip' title = 'Government Institutions'>Personal Information Controller(s)</label>
                                     <div class = 'input-group'>
                                         <input class = 'form-control'></input>
@@ -360,22 +299,22 @@
                             <div class = 'card-body'>
                                 
                                 <div class = 'form-group'>
-                                    <label class = 'card-title'>Use/Disclosure</label>
+                                    <label class = 'card-title form-check-label'>Use/Disclosure</label>
                                     <textarea class ='form-control' wrap='soft'></textarea>
                                 </div>
 
                                 <div class = 'form-group'>
-                                    <label class = 'card-title'>Protection</label>
+                                    <label class = 'card-title form-check-label'>Protection</label>
                                     <textarea class ='form-control' wrap='soft'></textarea>
                                 </div>
 
                                 <div class = 'form-group'>
-                                    <label class = 'card-title'>Backup</label>
+                                    <label class = 'card-title form-check-label'>Backup</label>
                                     <textarea class ='form-control' wrap='soft'></textarea>
                             </div>  
 
                             <div class = 'form-group'>
-                                    <label class = 'card-title'>Disposal</label>
+                                    <label class = 'card-title form-check-label'>Disposal</label>
                                     <textarea class ='form-control' wrap='soft'></textarea>
                             </div>
 
@@ -425,85 +364,7 @@
             </footer>
         </div>
     </div>
-    <!--   -->
-    <!-- <div class="fixed-plugin">
-    <div class="dropdown show-dropdown">
-        <a href="#" data-toggle="dropdown">
-            <i class="fa fa-cog fa-2x"> </i>
-        </a>
 
-        <ul class="dropdown-menu">
-			<li class="header-title"> Sidebar Style</li>
-            <li class="adjustments-line">
-                <a href="javascript:void(0)" class="switch-trigger">
-                    <p>Background Image</p>
-                    <label class="switch">
-                        <input type="checkbox" data-toggle="switch" checked="" data-on-color="primary" data-off-color="primary"><span class="toggle"></span>
-                    </label>
-                    <div class="clearfix"></div>
-                </a>
-            </li>
-            <li class="adjustments-line">
-                <a href="javascript:void(0)" class="switch-trigger background-color">
-                    <p>Filters</p>
-                    <div class="pull-right">
-                        <span class="badge filter badge-black" data-color="black"></span>
-                        <span class="badge filter badge-azure" data-color="azure"></span>
-                        <span class="badge filter badge-green" data-color="green"></span>
-                        <span class="badge filter badge-orange" data-color="orange"></span>
-                        <span class="badge filter badge-red" data-color="red"></span>
-                        <span class="badge filter badge-purple active" data-color="purple"></span>
-                    </div>
-                    <div class="clearfix"></div>
-                </a>
-            </li>
-            <li class="header-title">Sidebar Images</li>
-
-            <li class="active">
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="../assets/img/sidebar-1.jpg" alt="" />
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="../assets/img/sidebar-3.jpg" alt="" />
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="..//assets/img/sidebar-4.jpg" alt="" />
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="../assets/img/sidebar-5.jpg" alt="" />
-                </a>
-            </li>
-
-            <li class="button-container">
-                <div class="">
-                    <a href="http://www.creative-tim.com/product/light-bootstrap-dashboard" target="_blank" class="btn btn-info btn-block btn-fill">Download, it's free!</a>
-                </div>
-            </li>
-
-            <li class="header-title pro-title text-center">Want more components?</li>
-
-            <li class="button-container">
-                <div class="">
-                    <a href="http://www.creative-tim.com/product/light-bootstrap-dashboard-pro" target="_blank" class="btn btn-warning btn-block btn-fill">Get The PRO Version!</a>
-                </div>
-            </li>
-
-            <li class="header-title" id="sharrreTitle">Thank you for sharing!</li>
-
-            <li class="button-container">
-				<button id="twitter" class="btn btn-social btn-outline btn-twitter btn-round sharrre"><i class="fa fa-twitter"></i> · 256</button>
-                <button id="facebook" class="btn btn-social btn-outline btn-facebook btn-round sharrre"><i class="fa fa-facebook-square"></i> · 426</button>
-            </li>
-        </ul>
-    </div>
-</div>
- -->
 </body>
 
 <!--   Core JS Files   -->
@@ -519,6 +380,9 @@
 <script src="../assets/js/plugins/bootstrap-notify.js"></script>
 <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
 <script src="../assets/js/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script>
+
+<!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
+<script src="../assets/js/display.js" type="text/javascript"></script>
 
 <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project!
 <script src="../assets/js/demo.js"></script>

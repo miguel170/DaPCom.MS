@@ -1791,7 +1791,7 @@ fieldset[disabled] .form-control {
     text-transform: uppercase;
     color: #9A9A9A;
     font-weight: 600;
-    padding-bottom: 5px;
+    padding-bottom: 15px;
     border-top: none !important;
     border-bottom: none;
     text-align: left !important;
@@ -1836,6 +1836,8 @@ fieldset[disabled] .form-control {
 
 .form-check .form-check-label {
     display: inline-block;
+    margin-bottom: 15px;
+    margin-top: 15px;
     position: relative;
     cursor: pointer;
     padding-left: 35px;
@@ -1875,6 +1877,8 @@ fieldset[disabled] .form-control {
 
 .form-check.disabled .form-check-label {
     color: #9A9A9A;
+    margin-bottom: 15px;
+    margin-top: 15px;
     opacity: .5;
     cursor: not-allowed;
 }
@@ -1898,14 +1902,20 @@ fieldset[disabled] .form-control {
 .form-check .form-check-label input[type="checkbox"]:disabled+.form-check-sign,
 .form-check-radio input[type="radio"]:disabled+.form-check-sign {
     pointer-events: none !important;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 .form-check-radio .form-check-label {
     padding-left: 2rem;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 .form-check-radio.disabled .form-check-label {
     color: #9A9A9A;
+    margin-bottom: 15px;
+    margin-top: 15px;
     opacity: .5;
     cursor: not-allowed;
 }
@@ -2898,7 +2908,7 @@ Copyright (c) 2015 Daniel Eden
 
 .card .card-footer hr {
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .card .stats {
@@ -4597,7 +4607,7 @@ Copyright (c) 2015 Daniel Eden
     position: relative;
     text-align: left;
     overflow: hidden;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     margin-left: 66px;
     line-height: 8px;
     width: 61px !important;
