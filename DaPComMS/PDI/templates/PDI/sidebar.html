@@ -1,0 +1,52 @@
+{% extends 'PDI/base.html' %}
+
+{% block sidebar %}
+    <div class="sidebar" data-color = 'red' data-image="../assets/img/sidebar-4.jpg">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a href="http://www.creative-tim.com" class="simple-text">
+                        <img src = '../assets/img/DPCMS Logo.png' width="200px" height = '200px'>
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="main-dpo.html">
+                            <i class="nc-icon nc-chart-pie-35"></i>
+                            <p>Risk Dashboard</p>
+                        </a>
+                    </li>
+                    <li class = 'nav-item active' rel ='tooltip' title = 'Personal Data Inventory'>
+                        <a class="nav-link active" href="./main-pdi.html">
+                            <i class="nc-icon nc-layers-3"></i>
+                            <p>PDI</p>
+                        </a>
+                    </li>
+                    <li class="nav-item" rel ='tooltip' title = 'Privacy Impact Assessment'>
+                        <a class="nav-link" href="sample-pia-form.html">
+                            <i class="nc-icon nc-preferences-circle-rotate"></i>
+                            <p>PIA</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./table.html">
+                            <i class="nc-icon nc-notes"></i>
+                            <p>Consent Inventory</p>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a class="nav-link" href="./icons.html">
+                            <i class="nc-icon nc-atom"></i>
+                            <p>Icons</p>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+{% endblock %}

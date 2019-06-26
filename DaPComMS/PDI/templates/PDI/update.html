@@ -1,0 +1,253 @@
+{% extends 'PDI/base.html' %}
+
+{% block webtitle %} Personal Data Inventory - Create {% endblock %}
+
+{% block content %}
+                    <div class = 'row col-md-12 mx-auto'>
+                        
+                        <div class = 'card col-md-8 mx-auto'>    
+                            <div class = 'card-header'>
+                                <h4 class= "card-title">Name of Event/Activity</h4>
+                                    <p class = 'card-category'> A Program, Project, Process, Measure, System or Technology that is processing the personal data listed below</p>
+                            </div>
+                            
+                            <div class = 'card-body'>
+                                <div class = 'form-group'>
+                                    <label class = 'card-title form-check-label'>Name</label>                                    
+                                    <input class='form-control prerequisite' value = {{ activity.type }}></input>
+            
+                                    <label class = 'card-title form-check-label'>Type of Event/Activity</label>
+                                    <select class = 'form-control prerequisite'>
+                                        <option value = '1'>Program</option>
+                                        <option value = '2'>Project</option>
+                                        <option value = '3'>Process</option>
+                                        <option value = '4'>Measures</option>
+                                        <option value = '5'>System</option>
+                                        <option value = '6'>Technology</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="card-footer text-center">
+                                <button class = 'btn btn-primary btn-simple btn-fill' id = 'submit-act'> Proceed > </button>
+                            </div>
+
+                        </div>
+
+                        <div class = 'card col-md-3 mx-auto reveal'>
+                            <div class = 'card-header'>
+                                <h4 class= "card-title">Data Subject(s)</h4>
+                                    <p class = 'card-category'> Determine the people who owns the
+                                    data to be used for collection or processing</p>
+                            </div>
+
+                            <div class = 'card-body'>
+                                <div class = 'form-group'>
+                                    <label class = 'card-title form-check-label'>Data Subject(s)</label>
+                                        <div class = 'input-group input-rounded'>
+                                            <input class = 'form-control' value = {{activity.datasubject}}></input>
+                                                <button class = 'btn btn-secondary btn-fill'>
+                                                    <i class = 'nc-icon nc-simple-add font-weight-bold'></i>
+                                            </button>   
+                                        </div>
+                                </div>
+                            </div>  
+                    </div>
+
+                </div>
+
+            <!-- Data Element -->
+                    <div class = 'row col-md-12 col-sm-auto mx-auto reveal'>
+                        <div class = 'card col-md-6 col-sm-12 ml-4'>
+                            <div class = 'card-header'>
+                                <h4 class= "card-title">Data Element(s)</h4>
+                                    <p class = 'card-category'> Current list of personal data for collection in this activity </p>
+                                    <button type= 'button' class = 'btn btn-primary btn-fill' id = 'new'> New
+                                        </button>
+                            </div>
+
+                            <div class = 'card-body col-md-auto col-sm-auto mx-auto'>
+                                <div class="table table-full-width">
+                                        <table class="table table table-hover table-responsive">
+                                            <thead class = 'table-info'>
+                                                    <th>Name</th>
+                                                    <th>Date Created</th>
+                                                    <th>Date Updated</th>
+                                                    <th>Status</th>
+                                                    <th></th>
+                                            </thead>
+
+                                            <tbody id = 'invTable'>
+                                                <tr id = 'row'>
+                                                    <th>Control Number</th>
+                                                    <td>06-21-2019</td>
+                                                    <td>06-21-2019</td>
+                                                    <td class ='text-success'>Active</td>
+                                                    <td><button class = 'btn btn-danger btn-fill' href='#remove'>Remove</button></td>
+
+                                                </tr>
+
+                                                <tr id ='row'>
+                                                    <th>Name of Employee</th>
+                                                    <td>12-25-2017</td>
+                                                    <td>06-21-2017</td>
+                                                    <td class ='text-danger'>Removed</td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                    <div class = 'card-footer text-center'>
+                                        <button onclick="window.location='sample-pia-form.html'" type= 'button' class = 'btn btn-success btn-fill text-center'> Evaluate
+                                        </button>
+                                    </div>
+                            </div>
+
+                         <div class = 'card col-md-5 mx-auto pdi-sheet'>
+                            <div class = 'card-header'>
+                                <h4 class= "card-title">Data</h4>
+                                    <p class = 'card-category'> Determine the data that shall
+                                    be collected or processed for the activity.</p>
+                            </div>
+
+                            <div class = 'card-body'>
+                                <div class = 'form-group'>
+                                    <label class = 'card-title form-check-label'>Name</label>
+                                    <input class = 'form-control pdi-sheet'></input>
+                                </div>
+
+                                <div class = 'form-group'>
+                                    <label class = 'card-title form-check-label'>Data Classification</label>
+                                    <select class = 'form-control pdi-sheet'>
+                                        <option value='1'>Personal</option>
+                                        <option value='2'>Sensitive</option>
+                                        <option value='3'>Privileged</option>
+                                    </select>
+                                </div>
+
+                                <div class = 'form-group'>
+                                    <label class = 'card-title form-check-label'>Source</label>
+                                    <input class = 'form-control pdi-sheet'></input>
+                                </div>
+                            </div>
+
+                            <!-- Processing -->
+
+                            <div class = 'card-header'>
+                                <h4 class= "card-title">Processing</h4>
+                                    <p class = 'card-category'> Determine the data that shall
+                                    be collected or processed for the activity.</p>
+                            </div>
+
+                            <div class = 'card-body'>
+                                <div class = 'form-group'>
+                                    <label class = 'card-title form-check-label pdi-sheet'>Purpose(s)</label>
+                                    <textarea class ='form-control' wrap='soft'></textarea>   
+                                </div>
+
+                                <div class = 'form-group'>
+                                    <label class = 'card-title form-check-label'>Legal Basis</label>
+                                    <select class = 'form-control pdi-sheet'>
+                                        <option value='1'>Consent</option>
+                                        <option value='2'>Legitimate interest</option>
+                                        <option value='3'>Procedural requirement</option>
+                                    </select>
+                                </div>
+
+                                <div class = 'form-group'>
+                                    <label class = 'card-title form-check-label'>Location(s)</label>
+                                    <div class = 'input-group'>
+                                        <input class = 'form-control pdi-sheet'></input>
+                                    <button class = 'btn btn-info btn-fill'>
+                                        <i class = 'nc-icon nc-simple-add font-weight-bold'></i>
+                                    </button>
+                                </div>
+                            </div>
+    </div>
+
+                            <!-- Users -->
+
+                            <div class = 'card-header'>
+                                <h4 class= "card-title">Users</h4>
+                                    <p class = 'card-category'> Determine the people
+                                    who are accountable for the collection or processing
+                                    of personal data.</p>
+                            </div>
+
+                            <div class = 'card-body'>
+                                
+                                <div class = 'form-group'>
+                                    <label class = 'card-title form-check-label'>Internal</label>
+                                    <div class = 'input-group pdi-sheet'>
+                                        <input class = 'form-control pdi-sheet'></input>
+                                    <button class = 'btn btn-info btn-fill'>
+                                        <i class = 'nc-icon nc-simple-add font-weight-bold'></i>
+                                    </button>
+                                </div>
+        </div>
+
+                                <div class = 'form-group'>
+                                    <label class = 'card-title form-check-label'
+                                    rel = 'tooltip' title = 'Service Providers'>Personal Information Processor(s)</label>
+                                    <div class = 'input-group'>
+                                        <input class = 'form-control pdi-sheet'></input>
+                                    <button class = 'btn btn-info btn-fill'>
+                                        <i class = 'nc-icon nc-simple-add font-weight-bold'></i>
+                                    </button>
+                                </div>
+        </div>
+
+                                <div class = 'form-group'>
+                                    <label class = 'card-title form-check-label'
+                                    rel = 'tooltip' title = 'Government Institutions'>Personal Information Controller(s)</label>
+                                    <div class = 'input-group'>
+                                        <input class = 'form-control pdi-sheet'></input>
+                                    <button class = 'btn btn-info btn-fill'>
+                                        <i class = 'nc-icon nc-simple-add font-weight-bold'></i>
+                                    </button>
+                                </div>
+                            </div>
+    </div>
+                
+
+            <!-- Policies -->
+
+                            <div class = 'card-header'>
+                                <h4 class= "card-title">Policies</h4>
+                                    <p class = 'card-category'> Determine the involved
+                                    policy controls in collecting and processing
+                                personal data</p>
+                            </div>
+
+                            <div class = 'card-body'>
+                                
+                                    <div class = 'form-group'>
+                                        <label class = 'card-title form-check-label'>Use/Disclosure</label>
+                                        <textarea class ='form-control pdi-sheet' wrap='soft'></textarea>
+                                    </div>
+
+                                    <div class = 'form-group'>
+                                        <label class = 'card-title form-check-label'>Protection</label>
+                                        <textarea class ='form-control pdi-sheet' wrap='soft'></textarea>
+                                    </div>
+
+                                    <div class = 'form-group'>
+                                        <label class = 'card-title form-check-label'>Backup</label>
+                                        <textarea class ='form-control pdi-sheet' wrap='soft'></textarea>
+                                </div>  
+
+                                    <div class = 'form-group'>
+                                        <label class = 'card-title form-check-label'>Disposal</label>
+                                        <textarea class ='form-control pdi-sheet' wrap='soft'></textarea>
+                                </div>
+
+                                    <div class = 'card-footer text-center'>
+                                    <button class = 'btn btn-success btn-fill' id = 'save'> Save </button>
+                                    <button class = 'btn btn-danger btn-fill' id = 'cancel'> Cancel </button>
+                                </div> 
+                            </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+<h1> Activity Name: {{ activity.name }} </h1>
+<h3 Activity Type: {{ activity.type }} </h3>
+
+{% if error_message %}
+    <p> <strong> {{ error_message }} </strong> </p>
+{% endif %}
+
+<ul>
+    {% if activity.data_set.all %}
+        {% for data in activity.data_set.all %}
+        <li>
+            {{ data.name }} - {{ data.purpose }}
+        </li>
+    
+    {% endfor %}
+    
+    {% else %}
+        <p> No data elements declared in this activity</p>
+</ul>
+
+{% endif %}
+
+<form action = '{% url 'PDI:update' activity.id %}'
+      method='post'>
+ {% csrf_token %}
+    
+    <div class = 'form-group'>
+        <label>Activity Type</label>
+    <select class = 'form-control'>
+        {% for type in activity.data_set.all %}
+        <option> {{ type.name }} </option>
+        {% endfor %}
+        
+        <label for = ''></label>
+    </select>
+    </div>
+                               
+</form>

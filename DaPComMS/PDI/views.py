@@ -1,21 +1,30 @@
-from django.shortcuts import render
-
+from django.http import Http404
 from django.http import HttpResponse
 from .models import Activity
+
+# alternative* from django.template import loader
+from django.shortcuts import render, get_object_or_404
+
 
 # Create your views here.
 
 def index(request):
     all_activities = Activity.objects.all()
-    html = ''
     
-    for activity in all_activities:
-        url = '/pdi/' + str(activity.id) + '/'
-        
-        html += '<a href = "' + url +'">' + activity.name + '</a><br>'
-        
-    return HttpResponse(html)
+    # template = loader.get_template('PDI/index.html')
+    context = { 'activities' : all_activities }
+    
+    # return HttpResponse(template.render(context, request))
+    
+    return render(request, 'PDI/index.html', context)
 
 def update(request, activity_id):
-    return HttpResponse("<h2> Activity ID: " + str(activity_id)
-                       + "</h2>")
+    #try:
+    #    context = {
+    #     'activity' : Activity.objects.get(pk=activity_id),
+    #     }
+    #     
+    # except Activity.DoesNotExist:
+    #         raise Http404("Activity is not available")
+    activity = get_object_or_404(Activity, pk = activity_id)
+    return render(request, 'PDI/update.html', {'activity': activity})

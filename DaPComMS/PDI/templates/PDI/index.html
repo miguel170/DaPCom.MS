@@ -1,0 +1,71 @@
+{% extends 'PDI/base.html'%}
+
+{% block webtitle %} Personal Data Inventory {% endblock %}
+
+{% block content %}
+
+    <div class="row col-md-12 mx-auto">
+        <div class="card  card-tasks">
+                                <div class="card-header col-12">
+                                    <div class = 'col-6'>
+                                        <h4 class="card-title">Personal Data Inventory</h4>
+
+                                    <span class = 'justify-content-end'>
+                                        <button class = 'btn btn-primary btn-fill'
+                                    onclick="window.location='create-pdi-form.html'"> 
+                                    New
+                                </button>
+                                    </span>
+
+                                    </div>
+                                 </div>
+
+                                <div class="card-body ">
+                                    <div class="table-full-width">
+                                        <table class="table">
+                                        	<thead>
+                                        			<th>Timestamp</th>
+                                        			<th>Office</th>
+                                        			<th>Name of Activity</th>
+                                        			<th></th>
+                                        	</thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <!--<td>
+                                                        <div class="form-check">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="checkbox" value="">
+                                                                <span class="form-check-sign"></span>
+                                                            </label>
+                                                        </div>
+                                                    </td> -->
+                                                    <td>06/21/2019</td>
+                                                    <td>OCCS</td>
+                                                    <td>Job Expo</td>
+                                                    <!--<td class="td-actions text-right">
+                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
+                                                            <i class="fa fa-edit"></i>
+                                                        </button> -->
+                                                       <td> <button type="button" class="btn btn-info btn-simple btn-fill">
+                                                           View
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="card-footer ">
+                                    <hr>
+                                    <div class="stats">
+                                        <i class="now-ui-icons loader_refresh spin"></i> Updated 3 minutes ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+{% endblock %}
