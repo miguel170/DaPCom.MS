@@ -1,30 +1,42 @@
-from django.http import Http404
-from django.http import HttpResponse
+from django.views import generic
 from .models import Activity
-
-# alternative* from django.template import loader
+#from django.http import Http404
+#from django.http import HttpResponse
+##
+    # alternative* from django.template import loader
 from django.shortcuts import render, get_object_or_404
 
 
-# Create your views here.
-
+    # Create your views here.
 def index(request):
-    all_activities = Activity.objects.all()
-    
-    # template = loader.get_template('PDI/index.html')
-    context = { 'activities' : all_activities }
-    
-    # return HttpResponse(template.render(context, request))
-    
-    return render(request, 'PDI/index.html', context)
+  all_activities = Activity.objects.all()
+  count =  Activity.objects.count()
+#  template = loader.get_template('PDI/index.html')
+ 
+  context = { 'activities' : all_activities,
+              'total_act' : count,
+              'web_title' : "Personal Data Inventory"}
+
+  return render(request, 'PDI/index.html', context)
+#       return HttpResponse(template.render(context, request))
 
 def update(request, activity_id):
-    #try:
-    #    context = {
-    #     'activity' : Activity.objects.get(pk=activity_id),
-    #     }
-    #     
-    # except Activity.DoesNotExist:
-    #         raise Http404("Activity is not available")
-    activity = get_object_or_404(Activity, pk = activity_id)
-    return render(request, 'PDI/update.html', {'activity': activity})
+   # try:
+   #     context = {
+   #     'activity' : Activity.objects.get(pk=activity_id),
+   #     }
+
+   # except Activity.DoesNotExist:
+   #     raise Http404("Activity is not available")
+
+   act = get_object_or_404(Activity, pk = activity_id)
+   act1 =  Activity.objects.filter(id = activity_id)
+   elements = act1.data_set.get(id=1)
+
+   context = {
+    'activity' : act,
+    'elements': elements,
+    'web_title' : "Personal Data Inventory - Update"
+   }
+
+   return render(request, 'PDI/update.html/', context)

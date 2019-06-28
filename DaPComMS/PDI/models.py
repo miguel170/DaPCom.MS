@@ -14,6 +14,15 @@ class Activity(models.Model):
     
     def __str__(self):
         return self.name
+        
+class Office(models.Model):
+    abbr = models.CharField(max_length = 100)
+    name = models.CharField(max_length = 250)
+    activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
+    description = models.CharField(max_length = 250)
+
+    def __str__(self):
+        return "[" + self.abbr + "] " + self.name
     
 class Classification(models.Model):
     name = models.CharField(max_length = 100)

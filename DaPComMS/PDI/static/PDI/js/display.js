@@ -3,12 +3,12 @@ var Date = new Date();
 var getDate = Date.getMonth() + 1 + "-" + Date.getDate() + "-" + Date.getFullYear();
 
 $(document).ready(function() {
+    $('.pdi-sheet').hide();
     $('.reveal').hide();
     
     $('#submit-act').click(function(){
         $('.prerequisite').attr('readonly', true);
         $('.reveal').slideDown(2000);
-        $('.pdi-sheet').hide();
     });
     
     $('#new').click(function(){
@@ -18,7 +18,6 @@ $(document).ready(function() {
     
     $('#row').click(function(){
         $('.pdi-sheet').slideDown(2000);
-        $(".pdi-sheet").attr('readonly', true);
     });
     
      $('#save').click(function(){
@@ -28,7 +27,11 @@ $(document).ready(function() {
     
     $('#cancel').click(function(){
         $('.pdi-sheet').slideUp(2000);
-    });
+      });
+
+    $('#myTable').DataTable( {
+      responsive: true
+    } );
     
     
     function addInventory() {
@@ -37,7 +40,7 @@ $(document).ready(function() {
       "<tr id = 'row'>" +
         "<th>New Element</td>" +
         "<td>"+ getDate + "</td>" +
-        + "<td>"+ getDate + "</td>" +
+        "<td>"+ getDate + "</td>" +
          "<td class ='text-success'>Active</td>" +
         " <td><button class = 'btn btn-danger btn-fill' href='#remove'>Remove</button></td>"+
       "</tr>"

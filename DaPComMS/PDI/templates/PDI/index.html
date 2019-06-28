@@ -4,8 +4,12 @@
 
 {% block content %}
 
-    <div class="row col-md-12 mx-auto">
-        <div class="card  card-tasks">
+<div class="container-fluid">
+                    
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card  card-tasks">
                                 <div class="card-header col-12">
                                     <div class = 'col-6'>
                                         <h4 class="card-title">Personal Data Inventory</h4>
@@ -20,38 +24,38 @@
                                     </div>
                                  </div>
 
-                                <div class="card-body ">
-                                    <div class="table-full-width">
-                                        <table class="table">
-                                        	<thead>
-                                        			<th>Timestamp</th>
-                                        			<th>Office</th>
-                                        			<th>Name of Activity</th>
-                                        			<th></th>
-                                        	</thead>
+                                <div class="card-body col-md-12 mx-auto">
+                                    <div class="table-responsive table-full-width">
+                                        <table class="table table-hover" id = 'index'>
+                                            <thead class = 'table-info'>
+                                                    <th>Timestamp</th>
+                                                    <th>Office</th>
+                                                    <th>Name of Activity</th>
+                                                    <th></th>
+                                            </thead>
 
                                             <tbody>
-                                                <tr>
-                                                    <!--<td>
-                                                        <div class="form-check">
-                                                            <label class="form-check-label">
-                                                                <input class="form-check-input" type="checkbox" value="">
-                                                                <span class="form-check-sign"></span>
-                                                            </label>
-                                                        </div>
-                                                    </td> -->
-                                                    <td>06/21/2019</td>
-                                                    <td>OCCS</td>
-                                                    <td>Job Expo</td>
-                                                    <!--<td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button> -->
-                                                       <td> <button type="button" class="btn btn-info btn-simple btn-fill">
-                                                           View
-                                                        </button>
-                                                    </td>
+                                                {% for activity in activities %}
+                                                <form action = '{% url "PDI:update" activity.id %}'>
+                                                    
+
+                                                    <tr id= 'row'>
+                                                        <td>{{ activity.id }}</td>
+                                                        <td>{{ activity.office_set.get.abbr }}</td>
+                                                        <td>{{activity.name}}</td>
+                                                           <td> <button type="submit" class="btn btn-info btn-simple btn-fill"
+                                                            >
+                                                               View
+                                                            </button>
+                                                        </td>
                                                 </tr>
+
+                                                </form>
+                                                
+                                                {% empty %}
+                                                    <h2> Data Inventory is empty... </h2>
+                                                
+                                                {% endfor %}
                                             </tbody>
                                         </table>
                                     </div>
@@ -59,13 +63,13 @@
                                 <div class="card-footer ">
                                     <hr>
                                     <div class="stats">
-                                        <i class="now-ui-icons loader_refresh spin"></i> Updated 3 minutes ago
+                                        <strong> Submitted activities: {{ total_act }} </strong>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-{% endblock %}
+
+{% endblock content %}
