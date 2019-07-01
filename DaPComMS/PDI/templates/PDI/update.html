@@ -37,7 +37,7 @@
                                 <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'>Data Subject(s)</label>
                                         <div class = 'input-group input-rounded'>
-                                            <input class = 'form-control' value = {{activity.datasubject}} readonly></input>
+                                            <input class = 'form-control' value = '{{activity.data_subject}}' readonly></input>
                                                 <button class = 'btn btn-secondary btn-fill'>
                                                     <i class = 'nc-icon nc-simple-add font-weight-bold'></i>
                                             </button>   
@@ -60,6 +60,7 @@
 
                             <div class="card-body col-md-auto col-sm-auto mx-auto">
                                     <div class="table-responsive table-full-width">
+                                    {% if elements %}
                                         <table class="table table table-hover table-responsive">
                                             <thead class = 'table-info'>
                                                     <th>Name</th>
@@ -68,8 +69,9 @@
                                                     <th>Status</th>
                                                     <th></th>
                                             </thead>
-                                            {% for element in elements %}
+                                            
                                             <tbody id = 'invTable'>
+                                            {% for element in elements %}
                                                 <tr id = 'row'>
                                                     <th>{{ element.name }}</th>
                                                     <td>06-21-2019</td>
@@ -77,11 +79,13 @@
                                                     <td class ='text-success'>Active</td>
                                                     <td><button class = 'btn btn-danger btn-fill' href='#remove'>Remove</button></td>
                                                 </tr>
-                                                {% empty %}
-                                                    <h2 class = 'text-center'> No data elements declared </h2>
-                                            </tbody>
-                                            {% endfor %}
-                                        </table>
+                                                {% endfor %}
+                                                </tbody>
+                                                </table>
+                                                </div>
+                                        {% else %}
+                                        <h5 class = 'text-center'> No data elements declared </h5>
+                                        {% endif %}
                                     </div>
                                 </div>
 

@@ -26,8 +26,8 @@
 
                                 <div class="card-body col-md-12 mx-auto">
                                     <div class="table-responsive table-full-width">
-                                        {% for activity in activities %}
-
+                                        
+                                        {% if activities %}
                                         <table class="table table-hover" id = 'index'>
                                             <thead class = 'table-info'>
                                                     <th>Timestamp</th>
@@ -38,13 +38,13 @@
                                             </thead>
 
                                             <tbody>
-                                                <form action = '{% url "PDI:update" activity.id %}'>
-                                                    
-
+                                            {% for activity in activities %}
+                                                <form class = 'form-group'
+                                                action = '{% url "PDI:update" activity.id %}'>
                                                     <tr id= 'row'>
-                                                        <td>{{ activity.created_by }}</td>
+                                                        <td>{{ activity.date_created }}</td>
                                                         <td>{{ activity.id }}</td>
-                                                        <td>{{ activity.office_set.get.abbr }}</td>
+                                                        <td>{{ activity.office_set.first.abbr }}</td>
                                                         <td>{{ activity.name }}</td>
                                                            <td> <button type="submit" class="btn btn-info btn-simple btn-fill"
                                                             >
@@ -52,15 +52,14 @@
                                                             </button>
                                                         </td>
                                                 </tr>
-
                                                 </form>
+                                                {% endfor %}
                                             </tbody>
                                         </table>
-                                        {% empty %}
+                                        {% else %}
                                                     <h5 class = 'text-center'>
                                                     Data Inventory is empty... </h6>
-                                                
-                                                {% endfor %}
+                                        {% endif %}
                                     </div>
                                 </div>
                                 <div class="card-footer ">
