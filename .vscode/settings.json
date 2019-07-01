@@ -1,0 +1,7 @@
+{
+    "mix.port": 8000,
+    "mix.rootPath": "DaPComMs/",
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "browser-preview.format": "png",
+    "browser-preview.startUrl": "localhost:8000/pdi"
+}

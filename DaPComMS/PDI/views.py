@@ -1,5 +1,5 @@
 from django.views import generic
-from .models import Activity
+from .models import Activity, Data
 #from django.http import Http404
 #from django.http import HttpResponse
 ##
@@ -30,8 +30,7 @@ def update(request, activity_id):
    #     raise Http404("Activity is not available")
 
    act = get_object_or_404(Activity, pk = activity_id)
-   act1 =  Activity.objects.filter(id = activity_id)
-   elements = act1.data_set.get(id=1)
+   elements =  Data.objects.filter(activity = activity_id).all()
 
    context = {
     'activity' : act,

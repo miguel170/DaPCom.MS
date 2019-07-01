@@ -102,19 +102,19 @@
                                 <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'>Name</label>
                                     <input class = 'form-control'
-                                    value = '{{ activity.data_set.get.name }}' readonly></input>
+                                    value = '{{ elements.first.name }}' readonly></input>
                                 </div>
 
                                 <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'>Data Classification</label>
                                     <input class = 'form-control'
-                                    value = '{{ activity.data_set.get.classification.description }}' readonly></input>
+                                    value = '{{ elements.first.classification.description }}' readonly></input>
                                 </div>
 
                                 <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'>Source</label>
                                     <input class = 'form-control'
-                                    value = '{{ activity.data_set.get.source }}' readonly></input>
+                                    value = '{{ elements.first.source }}' readonly></input>
                                 </div>
                             </div>
 
@@ -130,20 +130,20 @@
                                 <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'>Purpose(s)</label>
                                     <textarea class ='form-control' wrap='soft'
-                                     readonly>{{ activity.data_set.get.purpose }}</textarea>   
+                                     readonly>{{ elements.first.purpose }}</textarea>   
                                 </div>
 
                                 <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'>Legal Basis</label>
                                     <input class = 'form-control'
-                                    value = '{{ activity.data_set.get.basis }}' readonly></input>
+                                    value = '{{ elements.first.basis }}' readonly></input>
                                 </div>
 
                                 <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'>Location(s)</label>
                                     <div class = 'input-group'>
                                         <input class = 'form-control'
-                                    value = '{{ activity.data_set.get.location }}' readonly></input>
+                                    value = '{{ elements.first.location }}' readonly></input>
                                 </div>
                             </div>
     </div>
@@ -162,21 +162,21 @@
                                 <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'>Internal</label>
                                     <input class = 'form-control'
-                                    value = '{{ activity.data_set.get.user_internal }}' readonly></input>
+                                    value = '{{ elements.first.user_internal }}' readonly></input>
                                 </div>
 
                                 <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'
                                     rel = 'tooltip' title = 'Service Providers'>Personal Information Processor(s)</label>
                                    <input class = 'form-control'
-                                    value = '{{ activity.data_set.get.user_pip }}' readonly></input>
+                                    value = '{{ elements.first.user_pip }}' readonly></input>
                                 </div>
 
                                 <div class = 'form-group'>
                                     <label class = 'card-title form-check-label'
                                     rel = 'tooltip' title = 'Government Institutions'>Personal Information Controller(s)</label>
                                     <input class = 'form-control'
-                                    value = '{{ activity.data_set.get.user_pic }}' readonly></input>
+                                    value = '{{ elements.first.user_pic }}' readonly></input>
                                 </div>
                             </div>
 
@@ -195,22 +195,22 @@
                                 
                                     <div class = 'form-group'>
                                         <label class = 'card-title form-check-label'>Use/Disclosure</label>
-                                        <textarea class ='form-control' wrap='soft' readonly> {{ activity.data_set.get.policy_use }}</textarea>
+                                        <textarea class ='form-control' wrap='soft' readonly> {{ elements.first.policy_use }}</textarea>
                                     </div>
 
                                     <div class = 'form-group'>
                                         <label class = 'card-title form-check-label'>Protection</label>
-                                        <textarea class ='form-control' wrap='soft' readonly> {{ activity.data_set.get.policy_protection }} </textarea>
+                                        <textarea class ='form-control' wrap='soft' readonly> {{ elements.first.policy_protection }} </textarea>
                                     </div>
 
                                     <div class = 'form-group'>
                                         <label class = 'card-title form-check-label'>Backup</label>
-                                        <textarea class ='form-control' wrap='soft' readonly>{{ activity.data_set.get.policy_backup }}</textarea>
+                                        <textarea class ='form-control' wrap='soft' readonly>{{ elements.first.policy_backup }}</textarea>
                                 </div>  
 
                                     <div class = 'form-group'>
                                         <label class = 'card-title form-check-label'>Disposal</label>
-                                        <textarea class ='form-control' wrap='soft' readonly> {{ activity.data_set.get.policy_disposal }}</textarea>
+                                        <textarea class ='form-control' wrap='soft' readonly> {{ elements.first.policy_disposal }}</textarea>
                                 </div>
 
                                     <div class = 'card-footer text-center'>
